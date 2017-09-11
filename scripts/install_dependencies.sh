@@ -3,4 +3,4 @@
 # Update system
 yum -y update
 
-yum -y install awscli nfs-utils
+yum -y install awscli nfs-utils firewalld
