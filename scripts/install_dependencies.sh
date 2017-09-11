@@ -3,4 +3,4 @@
 # Update system
 yum -y update
 
-yum -y install git awscli nfs-utils firewalld
+yum -y install git java awscli nfs-utils firewalld
