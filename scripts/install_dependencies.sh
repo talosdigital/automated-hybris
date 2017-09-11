@@ -2,3 +2,5 @@
 
 # Update system
 yum -y update
+
+yum -y install awscli nfs-utils
