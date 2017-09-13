@@ -3,16 +3,10 @@
 # Download and Configure Apache SOLR
 
 cd /opt
-wget http://apache.mirrors.lucidnetworks.net/lucene/solr/6.6.1/solr-6.6.1-src.tgz
-tar -xvf solr-6.6.1-src.tgz
-mv /opt/solr-6.6.1 /opt/solr
-mv /opt/solr/example /opt/solr/core
+wget http://apache.org/dist/lucene/solr/6.6.1/solr-6.6.1.tgz
+tar xzf solr-6.6.1.tgz solr-6.6.1/bin/install_solr_service.sh --strip-components=2
 
-# Copy Service file
-/bin/cp /opt/codedeploy/solr/solr /etc/init.d
-chmod +x /etc/init.d/solr
-
-chkconfig --add solr
+sudo bash bin/install_solr_service.sh solr-6.6.1-src.tgz
 
 systemctl daemon-reload
 
