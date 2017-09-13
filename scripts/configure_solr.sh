@@ -6,7 +6,7 @@ cd /opt
 wget http://apache.org/dist/lucene/solr/6.6.1/solr-6.6.1.tgz
 tar xzf solr-6.6.1.tgz solr-6.6.1/bin/install_solr_service.sh --strip-components=2
 
-sudo bash bin/install_solr_service.sh solr-6.6.1-src.tgz
+sudo bash ./install_solr_service.sh solr-6.6.1.tgz
 
 systemctl daemon-reload
 
