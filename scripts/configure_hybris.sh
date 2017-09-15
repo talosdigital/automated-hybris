@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Copy local.properties file for External MySQL connectivity
+# Copy local.properties and localextensions.xml files
 /bin/cp /opt/codedeploy/hybris/local.properties /home/hybris/hybris/config
+/bin/cp /opt/codedeploy/hybris/localextensions.xml /home/hybris/hybris/config
 chown -R hybris /home/hybris/hybris
 
 # Copy Service file
