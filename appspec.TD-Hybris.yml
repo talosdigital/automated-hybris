@@ -9,6 +9,9 @@ hooks:
       timeout: 300
       runas: root
   AfterInstall:
+    - location: scripts/mount_efs.sh
+      timeout: 300
+      runas: root
     - location: scripts/configure_hybris.sh
       timeout: 300
       runas: root
