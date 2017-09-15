@@ -12,6 +12,3 @@ then
 else
     echo "Entry in fstab exists."
 fi
-
-mkdir -p /mnt/efs/hybris/custom
-mkdir -p /mnt/efs/hybris/config
