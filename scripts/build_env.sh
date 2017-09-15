@@ -4,5 +4,6 @@
 
 cd /home/hybris/hybris/bin/platform
 . ./setantenv.sh
-ant clean all 
+ant clean 
 ant initialize
+ant all
