@@ -1,3 +1,3 @@
 #!/bin/bash
 
-systemctl restart solr
+systemctl start solr
