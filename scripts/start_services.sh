@@ -1,2 +1,2 @@
 #!/bin/bash
-systemctl restart hybris.service
+systemctl start hybris.service
