@@ -2,10 +2,7 @@
 
 # Copy local.properties and localextensions.xml files
 /bin/cp /opt/codedeploy/hybris/local.properties /home/hybris/hybris/config
-if [ "$DEPLOYMENT_GROUP_NAME" == "TD-Hybris-HAC" ]
-then
 /bin/cp /opt/codedeploy/hybris/localextensions.xml /home/hybris/hybris/config
-fi
 
 chown -R hybris /home/hybris/hybris
 
