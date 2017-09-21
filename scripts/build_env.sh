@@ -20,6 +20,6 @@ export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::")
 source /home/hybris/.bashrc
 
 cd /home/hybris/installer
-./install.sh -r b2c_acc initialize
+./install.sh -r b2c_acc
 fi
 
