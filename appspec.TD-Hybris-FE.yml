@@ -15,6 +15,9 @@ hooks:
     - location: scripts/configure_hybris.sh
       timeout: 300
       runas: root
+    - location: scripts/stop_services.sh
+      timeout: 300
+      runas: root
     - location: scripts/build_env.sh
       runas: hybris
   ApplicationStart:
