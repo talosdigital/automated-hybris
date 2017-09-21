@@ -8,6 +8,8 @@ chown -R hybris /home/hybris/hybris
 
 # Copy Service file
 /bin/cp /opt/codedeploy/hybris/hybris.service /usr/lib/systemd/system
+systemctl daemon-reload
+systemctl enable hybris.service
 
 # Copy MySQL DB Connector
 cd /tmp
