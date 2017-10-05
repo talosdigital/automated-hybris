@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Copy local.properties and localextensions.xml files
-/bin/cp /opt/codedeploy/solar/local.properties /home/hybris/hybris/config
-/bin/cp /opt/codedeploy/solar/localextensions.xml /home/hybris/hybris/config
+/bin/cp /opt/codedeploy/solr/local.properties /home/hybris/hybris/config
+/bin/cp /opt/codedeploy/solr/localextensions.xml /home/hybris/hybris/config
 
 chown -R hybris /home/hybris/hybris
 
 # Copy Service file
-/bin/cp /opt/codedeploy/solar/hybris.service /usr/lib/systemd/system
+/bin/cp /opt/codedeploy/solr/hybris.service /usr/lib/systemd/system
 systemctl daemon-reload
 systemctl enable hybris.service
 
