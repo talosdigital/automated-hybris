@@ -6,7 +6,7 @@ files:
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
-      timeout: 700
+      timeout: 800
       runas: root
   AfterInstall:
     - location: scripts/configure_solr.sh
