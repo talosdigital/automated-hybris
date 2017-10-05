@@ -28,4 +28,8 @@ systemctl enable firewalld
 firewall-cmd --zone=public --add-port=80/tcp --permanent
 firewall-cmd --zone=public --add-port=9001/tcp --permanent
 firewall-cmd --zone=public --add-port=9002/tcp --permanent
+if [ "$DEPLOYMENT_GROUP_NAME" == "TD-Hybris-SOLR" ]
+then
+firewall-cmd --zone=public --add-port=8983/tcp --permanent
+fi
 firewall-cmd --reload
