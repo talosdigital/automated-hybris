@@ -12,7 +12,9 @@ hooks:
     - location: scripts/configure_solr.sh
       timeout: 300
       runas: root
+    - location: scripts/build_env.sh
+      runas: hybris
   ApplicationStart:
-    - location: scripts/start_solr.sh
+    - location: scripts/start_services.sh
       timeout: 300
       runas: root
