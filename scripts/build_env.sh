@@ -5,7 +5,7 @@
 
 # Set and Build the Environment
 
-if [ "$DEPLOYMENT_GROUP_NAME" == "TD-Hybris-HAC" ]
+if [ "$DEPLOYMENT_GROUP_NAME" == "TD-Hybris-Solr" ]
 then
 cd /home/hybris/hybris/bin/platform
 . ./setantenv.sh
