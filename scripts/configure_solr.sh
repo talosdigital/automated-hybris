@@ -1,13 +1,23 @@
 #!/bin/bash
 
-# Download and Configure Apache SOLR
+# Copy local.properties and localextensions.xml files
+/bin/cp /opt/codedeploy/solar/local.properties /home/hybris/hybris/config
+/bin/cp /opt/codedeploy/solar/localextensions.xml /home/hybris/hybris/config
 
-cd /opt
-#wget http://apache.org/dist/lucene/solr/6.6.1/solr-6.6.1.tgz
-wget http://archive.apache.org/dist/lucene/solr/6.0.1/solr-6.0.1.tgz
-tar xzf solr-6.0.1.tgz solr-6.0.1/bin/install_solr_service.sh --strip-components=2
+chown -R hybris /home/hybris/hybris
 
-sudo bash ./install_solr_service.sh solr-6.0.1.tgz
+# Copy Service file
+/bin/cp /opt/codedeploy/solar/hybris.service /usr/lib/systemd/system
+systemctl daemon-reload
+systemctl enable hybris.service
+
+# Copy MySQL DB Connector
+cd /tmp
+wget https://dev.mysql.com/get/archives/mysql-connector-java-5.1/mysql-connector-java-5.1.34.zip
+unzip mysql-connector-java-5.1.34.zip
+cd mysql-connector-java-5.1.34
+/bin/cp mysql-connector-java-5.1.34-bin.jar /home/hybris/hybris/bin/platform/lib/dbdriver/mysql-connector-java-5.1.34-bin.jar
+chown hybris:hybris /home/hybris/hybris/bin/platform/lib/dbdriver/mysql-connector-java-5.1.34-bin.jar
 
 systemctl daemon-reload
 
@@ -16,5 +26,7 @@ setenforce 0
 systemctl start firewalld
 systemctl enable firewalld
 firewall-cmd --zone=public --add-port=80/tcp --permanent
+firewall-cmd --zone=public --add-port=9001/tcp --permanent
+firewall-cmd --zone=public --add-port=9002/tcp --permanent
 firewall-cmd --zone=public --add-port=8983/tcp --permanent
 firewall-cmd --reload
